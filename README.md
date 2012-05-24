@@ -111,11 +111,7 @@ Enumeration keys: Uppercase with underscores
 
 ## Variables
 
-1.  Variables SHOULD be initialized at the top of function scope — if
-    possible, in a way that indicates what type of value they will hold.
-    Null initializations are acceptable. There should be only one `var`
-    keyword, used on the first variable declaration, and subsequent
-    variables should be declared using an initial comma.
+1.  Variables SHOULD be initialized at the top of function scope — if possible, in a way that indicates what type of value they will hold. Null initializations are acceptable. There should be only one `var` keyword, used on the first variable declaration, and subsequent variables should be declared using an initial comma. Indentation can be before or after comma.
     -   Incorrect:
 
             var magicItemCount;
@@ -127,6 +123,12 @@ Enumeration keys: Uppercase with underscores
             var magicItemCount = 0
               , magicSwordName = ''
               , wizardNpc = null;
+              
+    -   Correct:
+
+            var magicItemCount = 0
+            ,   magicSwordName = ''
+            ,   wizardNpc = null;
 
 2.  Variable declarations SHOULD NOT include extra spaces before the
     equals sign to align the variable values.
