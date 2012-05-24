@@ -21,97 +21,76 @@ especially if a deviation would make your code more readable.
 
 ### Overview
 
-Constructor:  CamelCase with an initial capital letter
+**Constructor**:  CamelCase with an initial capital letter
 
-    MightyBalrog, MagicWeapon
+`MightyBalrog, MagicWeapon`
 
-Namespace name: camelCase with an initial lowercase letter
+**Namespace name**: camelCase with an initial lowercase letter
 
-    clericSpells, savingThrows
+`clericSpells, savingThrows`
 
-Public method: camelCase with an initial lowercase letter
+**Public method**: camelCase with an initial lowercase letter
 
-    castDimensionalDoorway, rollForInitiative
+`castDimensionalDoorway, rollForInitiative`
 
-Public variable: camelCase with an initial lowercase letter
+**Public variable**: camelCase with an initial lowercase letter
 
-    materialComponents, hasTrackingAbilities
+`materialComponents, hasTrackingAbilities`
 
-Private method: camelCase with an initial lowercase letter and underscore
+**Private method**: camelCase with an initial lowercase letter and underscore
 
-    _getHealth
+`_getHealth`
 
-Private variable: camelCase with an initial lowercase letter and underscore
+**Private variable**: camelCase with an initial lowercase letter and underscore
 
-    _backstabAbility
+`_backstabAbility`
 
-Method arguments: camelCase with an initial lowercase letter
+**Method arguments**: camelCase with an initial lowercase letter
 
-    halfOrcArmy
+`halfOrcArmy`
 
-Local variables: camelCase with an initial lowercase letter
+**Local variables**: camelCase with an initial lowercase letter
 
-    isHumanoid, levelCount
+`isHumanoid, levelCount`
 
-Object keys: camelCase with an initial lowercase letter
+**Object keys**: camelCase with an initial lowercase letter
 
-    character.armorClass, character.hitPoints
+`character.armorClass, character.hitPoints`
 
-‘Constants’: Uppercase with underscores
+**Constants**: Uppercase with underscores
 
-    CLERIC_PLAYER, GAME_MASTER
+`CLERIC_PLAYER, GAME_MASTER`
 
-Enumeration keys: Uppercase with underscores
+**Enumeration keys**: Uppercase with underscores
 
-    characterClass.MAGIC_USER, armorTypes.PLATE_MAIL
+`characterClass.MAGIC_USER, armorTypes.PLATE_MAIL`
 
 ### Notes
 
-1.  Variable/method names in all lowercase with underscores (AKA
-    'snake-case') SHOULD NOT be used unless mimicking another
-    API. Object-keys received in snake-case from JSON-parsed
-    API-data may be used as-is, but conversion to camel-case is
-    preferred if possible.
+1.  Variable/method names in all lowercase with underscores (AKA 'snake-case') **SHOULD NOT** be used unless mimicking another API. Object-keys received in snake-case from JSON-parsed API-data may be used as-is, but conversion to camel-case is preferred if possible.
 
-    -   Incorrect:
+	- Incorrect: `wizard_hat, vorpal_blade`
 
-            wizard_hat, vorpal_blade
-
-    -   Correct:
-
-            wizardHat, vorpalBlade
+    - Correct: `wizardHat, vorpalBlade`
 
 2.  Acronyms in variable/method names SHOULD NOT be upppercased.
-    -   Incorrect:
+    -   Incorrect: `bartenderNPC, newRPG`
 
-            bartenderNPC, newRPG
-
-    -   Correct:
-
-            bartenderNpc, newRpg
+    -   Correct: `bartenderNpc, newRpg`
 
 3.  Variable/method names SHOULD be written in English.
-    -   Incorrect:
+    -   Incorrect: `dekaiKatana`
 
-            dekaiKatana
+    -   Correct: `giganticSword`
 
-    -   Correct:
+4.  Variable/method names SHOULD NOT be abbreviated to the point of being unclear.
+    -   Incorrect: `wndMnstr[3]`
 
-            giganticSword
-
-4.  Variable/method names SHOULD NOT be abbreviated to the point of
-    being unclear.
-    -   Incorrect:
-
-            wndMnstr[3]
-
-    -   Correct:
-
-            wanderingMonster[3]
+    -   Correct: `wanderingMonster[3]`
 
 ## Variables
 
-1.  Variables SHOULD be initialized at the top of function scope — if possible, in a way that indicates what type of value they will hold. Null initializations are acceptable. There should be only one `var` keyword, used on the first variable declaration, and subsequent variables should be declared using an initial comma. Indentation can be before or after comma.
+1.  Variables SHOULD be initialized at the top of function scope — if possible, in a way that indicates what type of value they will hold. `null` initializations are acceptable. There should be only one `var` keyword, used on the first variable declaration, and subsequent variables should be declared using an initial comma. Indentation can be before or after comma.
     -   Incorrect:
 
             var magicItemCount;
@@ -130,10 +109,9 @@ Enumeration keys: Uppercase with underscores
             ,   magicSwordName = ''
             ,   wizardNpc = null;
 
-2.  Variable declarations SHOULD NOT include extra spaces before the
-    equals sign to align the variable values.
+2.  Variable declarations **SHOULD NOT** include extra spaces before the equals sign to align the variable values.
     -   Incorrect:
-
+    
             var currentThiefLevel = 8
               , canBackstab       = true
               , isNpc             = true;
@@ -144,63 +122,55 @@ Enumeration keys: Uppercase with underscores
               , canBackstab = true
               , isNpc = true;
 
-3.  Variable names SHOULD NOT include ‘temp’ or ‘tmp’. — all local
-    variables are by definition temporary.
-    -   Incorrect:
+3.  Variable names **SHOULD NOT** include ‘temp’ or ‘tmp’. — all local variables are by definition temporary.
+    -   Incorrect: `tempString, tmpDate`
 
-            tempString, tmpDate
+    -   Correct: `str, dt`
 
-    -   Correct:
+4.  Magic numbers **SHOULD NOT** be used. Use a constant instead.
+    -   Incorrect: `42`
 
-            str, dt
-
-4.  Magic numbers SHOULD NOT be used. Use a constant instead.
-    -   Incorrect:
-
-            42
-
-    -   Correct:
-
-            ANSWER_TO_THE_QUESTION_OF_LIFE
+    -   Correct: `ANSWER_TO_THE_QUESTION_OF_LIFE`
 
 ## Coding Style
 
 ### Overview
 
-1.  Function-declarations / function-expressions (in general declarations should
-be preferred to expressions):
+1.  Function-declarations / function-expressions (in general declarations should be preferred to expressions):
 
         var checkForSecretDoors = function (race, level) {
-          // Stuff for check here
+          	// Stuff for check here
         };
 
-        function checkForTraps(dexterity, level) {
-        // Do stuff to check for traps here
+        function checkForTraps (dexterity, level) {
+        	// Do stuff to check for traps here
         }
 
 2.  If statements:
 
         if (gotInitiative) {
-          attackDragon();
+        	attackDragon();
         }
         else if (speaksDragon) {
-          tryNegotiating();
+        	tryNegotiating();
         }
         else {
-          runAway();
+          	runAway();
         }
+        
+        done && gameOver();
 
 3.  For statements:
 
-        for (var i = 0; i < guards.length; i++) {
-          rollTwentySided(guards[i]);
+		for (var i = 0; i < guards.length; i++) {
+			rollTwentySided(guards[i]);
         }
 
 4.  While statements:
 
         while (charactersInjured) {
-          castCureLightWounds();
-          charactersInjured = checkCharacterHealth();
+        	castCureLightWounds();
+        	charactersInjured = checkCharacterHealth();
         }
 
 5.  Switch statements:
@@ -247,6 +217,18 @@ be preferred to expressions):
         , wand: 'Wand of Negation'
         , misc: 'Boots of Elvenkind'
         };
+
+8. Module:
+		
+		(function () {})();
+		
+		(function () {
+			var root = this;
+			
+			// Dependency checking here
+			// Then magic
+			
+		}).call(this);
 
 ### Notes
 
@@ -300,21 +282,8 @@ be preferred to expressions):
               ignoreTalk();
             }
 
-5.  Parentheses in function-expressions SHOULD NOT have a space before
-    them.
-    -   Incorrect:
 
-            function getArmorClass (armorType, dexterity) {
-              // Get AC stuff here
-            }
-
-    -   Correct:
-
-            function getArmorClass(armorType, dexterity) {
-              // Get AC stuff here
-            }
-
-6.  Commas SHOULD be followed by spaces.
+5.  Commas SHOULD be followed by spaces.
     -   Incorrect:
 
             getExperiencePoints(monster,hitPoints);
@@ -323,13 +292,7 @@ be preferred to expressions):
 
             getExperiencePoints(monster, hitPoints);
 
-7.  The colon in object literal notation SHOULD have no space in front
-    of it, and be followed by a single space. Entries after the initial
-    item MUST be separated by leading commas (i.e., ‘comma-first’), not
-    trailing commas. The opening bracket MUST NOT be dropped to a new
-    line (so-called ‘Allman style’), due to automatic
-    semicolon-insertion when returning an object literal. Leading commas
-    should align vertically with the closing bracket on the final line.
+6.  The colon in object literal notation SHOULD have no space in front of it, and be followed by a single space. Entries after the initial item MUST be separated by leading commas (i.e., ‘comma-first’), not trailing commas. The opening bracket MUST NOT be dropped to a new line (so-called ‘Allman style’), due to automatic semicolon-insertion when returning an object literal. Leading commas should align vertically with the closing bracket on the final line.
     -   Incorrect:
 
             var newCharacter = {
@@ -354,7 +317,7 @@ be preferred to expressions):
             , isNpc: false
             };
 
-8.  Operators SHOULD both have a space before and after.
+7.  Operators SHOULD both have a space before and after.
     -   Incorrect:
 
             var message = speaksDrow? getMessageinDrow():'You do not speak Drow.';
@@ -362,6 +325,12 @@ be preferred to expressions):
     -   Correct:
 
             var message = speaksDrow ? getMessageinDrow() : 'You do not speak Drow.';
+   
+	-	Correct:
+
+            var message = speaksDrow 
+            ? getMessageinDrow() 
+            : 'You do not speak Drow.';
 
     -   Incorrect:
 
@@ -371,8 +340,7 @@ be preferred to expressions):
 
             var thaco = hit + adjustment - randomFactor;
 
-9.  Lengthy string parameters SHOULD be placed into variables before
-    using.
+8.  Lengthy string parameters SHOULD be placed into variables before using.
     -   Incorrect:
 
             var elem = document.getElementById('charClass-' + charClass +
@@ -383,4 +351,5 @@ be preferred to expressions):
             var char = 'charClass-' + charClass
               , combat = 'combatStatus-' + armorClass + '-' + toHitBonus
               , elem = document.getElementById(char + '_' + combat);
+
 
