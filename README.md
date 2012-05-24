@@ -68,24 +68,16 @@ especially if a deviation would make your code more readable.
 ### Notes
 
 1.  Variable/method names in all lowercase with underscores (AKA 'snake-case') **SHOULD NOT** be used unless mimicking another API. Object-keys received in snake-case from JSON-parsed API-data may be used as-is, but conversion to camel-case is preferred if possible.
-
 	- Incorrect: `wizard_hat, vorpal_blade`
-
     - Correct: `wizardHat, vorpalBlade`
-
 2.  Acronyms in variable/method names SHOULD NOT be upppercased.
     -   Incorrect: `bartenderNPC, newRPG`
-
     -   Correct: `bartenderNpc, newRpg`
-
 3.  Variable/method names SHOULD be written in English.
     -   Incorrect: `dekaiKatana`
-
     -   Correct: `giganticSword`
-
 4.  Variable/method names SHOULD NOT be abbreviated to the point of being unclear.
     -   Incorrect: `wndMnstr[3]`
-
     -   Correct: `wanderingMonster[3]`
 
 ## Variables
@@ -96,13 +88,11 @@ especially if a deviation would make your code more readable.
             var magicItemCount;
             var magicSwordName = '';
             var wizardNpc;
-
     -   Correct:
 
             var magicItemCount = 0
               , magicSwordName = ''
-              , wizardNpc = null;
-              
+              , wizardNpc = null;       
     -   Correct:
 
             var magicItemCount = 0
@@ -115,7 +105,6 @@ especially if a deviation would make your code more readable.
             var currentThiefLevel = 8
               , canBackstab       = true
               , isNpc             = true;
-
     -   Correct:
 
             var currentThiefLevel = 8
@@ -124,14 +113,11 @@ especially if a deviation would make your code more readable.
 
 3.  Variable names **SHOULD NOT** include ‘temp’ or ‘tmp’. — all local variables are by definition temporary.
     -   Incorrect: `tempString, tmpDate`
-
     -   Correct: `str, dt`
-
 4.  Magic numbers **SHOULD NOT** be used. Use a constant instead.
     -   Incorrect: `42`
-
     -   Correct: `ANSWER_TO_THE_QUESTION_OF_LIFE`
-
+    
 ## Coding Style
 
 ### Overview
@@ -232,13 +218,10 @@ especially if a deviation would make your code more readable.
 
 ### Notes
 
-1.  Function literals MUST include a space between the word ‘function’
-    and the parentheses. (Otherwise it appears to be a function with the
-    name of ‘function.’)
+1.  Function literals MUST include a space between the word `function` and the parentheses. (Otherwise it appears to be a function with the name of `function.`)
     -   Incorrect:
 
             var rollInitiative = function() { // Roll die here };
-
     -   Correct:
 
             var rollInitiative = function () { // Roll die here };
@@ -251,9 +234,8 @@ especially if a deviation would make your code more readable.
                                                     numberOfClerics,
                                                     pintsOfAlePurchased,
                                                     charismaAjustment);
-
     -   Correct:
-
+    
             var localMonsterRumors = getLocalGossip(inkeeper,
                 localInn, numberOfClerics, pintsOfAlePurchased,
                 charismaAjustment);
@@ -263,19 +245,16 @@ especially if a deviation would make your code more readable.
     -   Incorrect:
 
             if (isUndead) grabFire();
-
     -   Correct:
 
             if (isUndead) { grabFire(); }
 
-4.  Parenthesis in conditional statements (if, while, for, etc.) SHOULD
-    have a space before them.
+4.  Parenthesis in conditional statements (if, while, for, etc.) SHOULD have a space before them.
     -   Incorrect:
 
             if(isNpc) {
               ignoreTalk();
             }
-
     -   Correct:
 
             if (isNpc) {
@@ -287,7 +266,6 @@ especially if a deviation would make your code more readable.
     -   Incorrect:
 
             getExperiencePoints(monster,hitPoints);
-
     -   Correct:
 
             getExperiencePoints(monster, hitPoints);
@@ -300,7 +278,6 @@ especially if a deviation would make your code more readable.
               class:'figheter',
               isNpc:false
             };
-
     -   Also incorrect:
 
             var newCharacter = {
@@ -308,7 +285,6 @@ especially if a deviation would make your code more readable.
               class : 'figheter',
               isNpc : false
             };
-
     -   Correct:
 
             var newCharacter = {
@@ -321,21 +297,17 @@ especially if a deviation would make your code more readable.
     -   Incorrect:
 
             var message = speaksDrow? getMessageinDrow():'You do not speak Drow.';
-
     -   Correct:
 
             var message = speaksDrow ? getMessageinDrow() : 'You do not speak Drow.';
-   
 	-	Correct:
 
             var message = speaksDrow 
             ? getMessageinDrow() 
             : 'You do not speak Drow.';
-
     -   Incorrect:
-
-            var thaco = hit+adjustment-randomFactor;
-
+			
+			var thaco = hit+adjustment-randomFactor;
     -   Correct:
 
             var thaco = hit + adjustment - randomFactor;
@@ -345,7 +317,6 @@ especially if a deviation would make your code more readable.
 
             var elem = document.getElementById('charClass-' + charClass +
                 + '_combatStats-' + armorClass + '-' + toHitBonus);
-
     -   Correct:
 
             var char = 'charClass-' + charClass
